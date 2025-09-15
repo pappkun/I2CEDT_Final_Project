@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume & Job Description App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Resume & Job Description App</h1>
+    <section id="jobdesc-section">
+        <h2>Job Descriptions</h2>
+        <form id="jobdesc-form">
+            <input type="text" id="jobdesc-input" placeholder="Enter job description" required>
+            <button type="submit">Add</button>
+        </form>
+        <ul id="jobdesc-list"></ul>
+    </section>
+    <section id="resume-section">
+        <h2>Resume</h2>
+        <textarea id="resume-input" rows="6" cols="50" placeholder="Paste your resume here..."></textarea>
+        <button id="resume-save">Save Resume</button>
+        <div id="resume-status"></div>
+    </section>
+    <section id="rating-section">
+        <h2>Resume Rating</h2>
+        <button id="rate-resume">Rate Resume</button>
+        <div id="rating-throbber" style="display:none;text-align:center;margin:10px 0;">
+            <span class="throbber"></span>
+        </div>
+        <div id="rating-result"></div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
