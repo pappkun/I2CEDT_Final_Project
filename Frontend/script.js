@@ -86,7 +86,8 @@ const ratingThrobber = document.getElementById('rating-throbber');
 function renderRating(data) {
     // Score bar (0-100)
     const score = typeof data.overallscore === 'number' ? data.overallscore : 0;
-    const scorePercent = Math.max(0, Math.min(100, score));
+    // Convert score out of 10 to percent
+    const scorePercent = Math.max(0, Math.min(100, score * 10));
     const bar = `
         <div id="rating-bar">
             <div id="rating-bar-fill" style="width:${scorePercent}%"></div>
