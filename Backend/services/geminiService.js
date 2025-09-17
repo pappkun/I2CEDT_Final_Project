@@ -28,22 +28,22 @@ Resume:
 ${resumeText}
 
 Instructions:
-Give an overall rating from 1 to 10 based on how well the resume matches the job description.
-in this format:
-Score:{score}
-Feedback:{brief summary of the overall impression. if score is not 10, list all mistake KEEP IT COMPACTED AND SUMMARY-LIKE}
+Give an overall rating from 0 to 100 based on how well the resume matches the job description.
 Evaluate using these criteria:
 
-   Positive aspects a good resume SHOULD have:
-   - Include relevant keywords from the job description
-   - Use quantifiable measures to demonstrate achievements
-   - Show important soft skills relevant to the job
+Positive aspects a good resume SHOULD have:
+- Include relevant keywords from the job description
+- Use quantifiable measures to demonstrate achievements
+- Show important soft skills relevant to the job
 
-   Negative aspects a good resume SHOULD NOT have:
-   - Be vague or unclear
-   - Overuse technical jargon
-   - Be prone to miscommunication
-   - Include unrelated skills or experiences
+Negative aspects a good resume SHOULD NOT have:
+- Be vague or unclear
+- Overuse technical jargon
+- Be prone to miscommunication
+- Include unrelated skills or experiences
+in this format:
+Feedback:{brief summary of the overall impression. if score is not 100, list all mistake KEEP IT COMPACTED AND SUMMARY-LIKE}
+Score:{score}
 `;
         const result = await model.generateContent(prompt);
         console.log('Gemini response:', result);
