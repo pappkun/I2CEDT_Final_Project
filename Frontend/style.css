@@ -212,3 +212,90 @@ li:hover span {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: #181a1b;
+    color: #e0e0e0;
+}
+body.dark-mode section {
+    background: #23272b;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.32);
+}
+body.dark-mode input,
+body.dark-mode textarea {
+    background: #23272b;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+body.dark-mode input:focus,
+body.dark-mode textarea:focus {
+    border-color: #7a90b2;
+    box-shadow: 0 0 8px rgba(122, 144, 178, 0.4);
+}
+body.dark-mode button {
+    color: #fff;
+    background: linear-gradient(270deg, #3a4c6e, #4aa6a6, #23272b, #3a4c6e);
+    background-size: 600% 600%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+body.dark-mode button:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.32);
+}
+body.dark-mode .delete-btn {
+    background: linear-gradient(135deg, #944d80, #b84d4d);
+}
+body.dark-mode .delete-btn:hover {
+    background: linear-gradient(135deg, #b06a95, #d46a6a);
+}
+body.dark-mode li {
+    background: #23272b;
+    color: #e0e0e0;
+}
+body.dark-mode li::before {
+    background: linear-gradient(120deg, #3a4c6e, #4aa6a6, #23272b);
+}
+body.dark-mode #resume-status {
+    color: #7a90b2;
+}
+body.dark-mode #rating-throbber .throbber {
+    border: 4px solid #7a90b2;
+    border-top: 4px solid #23272b;
+}
+body.dark-mode #rating-bar {
+    background: #23272b;
+}
+body.dark-mode #rating-bar-fill {
+    background: linear-gradient(90deg, #3a4c6e, #4aa6a6, #23272b, #3a4c6e);
+}
+body.dark-mode #rating-score-label {
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+    background: none !important;
+    text-shadow: 0 1px 0px rgba(0,0,0,0.7);
+}
+body.dark-mode #rating-result {
+    background: linear-gradient(270deg, #e0e0e0, #7a90b2, #4aa6a6, #e0e0e0);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+body.dark-mode h1,
+body.dark-mode h2 {
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+    background: none !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+/* Theme toggle button top right */
+#theme-toggle {
+    position: fixed !important;
+    top: 24px !important;
+    right: 24px !important;
+    bottom: auto !important;
+    left: auto !important;
+    z-index: 1000;
+    min-width: 44px;
+    min-height: 44px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
