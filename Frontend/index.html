@@ -6,25 +6,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Revime</h1>
-    <h2>AI Resume reviewer</h2>
+
+    <!-- Language Switch Button -->
+    <button id="lang-toggle" style="position:fixed;top:24px;left:24px;z-index:1000;min-width:44px;min-height:44px;box-shadow:0 2px 8px rgba(0,0,0,0.12);">🇬🇧</button>
+
+    <h1 data-lang-key="title">Revime</h1>
+    <h2 data-lang-key="subtitle">AI Resume reviewer</h2>
     <section id="jobdesc-section">
-        <h3>Job Descriptions</h3>
+        <h3 data-lang-key="jobdesc-title">Job Descriptions</h3>
         <form id="jobdesc-form">
-            <input type="text" id="jobdesc-input" placeholder="Enter job description" required>
-            <button type="submit">Add</button>
+            <input type="text" id="jobdesc-input" data-lang-key="jobdesc-input" placeholder="Enter job description" required>
+            <button type="submit" data-lang-key="add-btn">Add</button>
         </form>
         <ul id="jobdesc-list"></ul>
     </section>
     <section id="resume-section">
-        <h3>Resume</h3>
-        <textarea id="resume-input" rows="6" cols="50" placeholder="Paste your resume here..."></textarea>
-        <button id="resume-save">Save Resume</button>
+        <h3 data-lang-key="resume-title">Resume</h3>
+        <textarea id="resume-input" rows="6" cols="50" data-lang-key="resume-input" placeholder="Paste your resume here..."></textarea>
+        <button id="resume-save" data-lang-key="save-resume">Save Resume</button>
         <div id="resume-status"></div>
     </section>
     <section id="rating-section">
-        <h3>Resume Rating</h3>
-        <button id="rate-resume">Rate Resume</button>
+        <h3 data-lang-key="rating-title">Resume Rating</h3>
+        <button id="rate-resume" data-lang-key="rate-resume">Rate Resume</button>
         <div id="rating-throbber" style="display:none;text-align:center;margin:10px 0;">
             <span class="throbber"></span>
         </div>
@@ -33,23 +37,89 @@
 
     <!-- New Content -->
     <section id="about-tool">
-        <h2>Enhance your resume with AI Resume Checker</h2>
-        <p>
+        <h2 data-lang-key="about-title">Enhance your resume with AI Resume Checker</h2>
+        <p data-lang-key="about-desc">
             Revime is a tool designed to evaluate the quality and effectiveness of a resume by analyzing its content, structure, and presentation.
             The system provides a numerical score between 0 and 100, where 0 indicates a very weak resume and 100 indicates an excellent, highly competitive resume.
         </p>
 
-        <h3>The rating is determined based on several criteria:</h3>
+        <h3 data-lang-key="criteria-title">The rating is determined based on several criteria:</h3>
         <ul>
-            <li><strong>Content Relevance:</strong> Checks whether the resume highlights relevant experience, skills, and achievements aligned with the target job.</li>
-            <li><strong>Clarity:</strong> Evaluates logical flow and clarity in your resume. Well-structured resumes with clear wording and consistent style score higher.</li>
-            <li><strong>Language & Professionalism:</strong> Analyzes grammar, tone, and use of professional language. Avoiding vague phrases and filler words increases the score.</li>
-            <li><strong>Skills & Keywords:</strong> Looks for industry-specific keywords and technical skills that match job descriptions.</li>
-            <li><strong>Impact & Achievements:</strong> Measures how well accomplishments are quantified (e.g., “increased sales by 30%” rather than “helped sales”).</li>
+            <li data-lang-key="criteria-content"><strong>Content Relevance:</strong> Checks whether the resume highlights relevant experience, skills, and achievements aligned with the target job.</li>
+            <li data-lang-key="criteria-clarity"><strong>Clarity:</strong> Evaluates logical flow and clarity in your resume. Well-structured resumes with clear wording and consistent style score higher.</li>
+            <li data-lang-key="criteria-language"><strong>Language & Professionalism:</strong> Analyzes grammar, tone, and use of professional language. Avoiding vague phrases and filler words increases the score.</li>
+            <li data-lang-key="criteria-skills"><strong>Skills & Keywords:</strong> Looks for industry-specific keywords and technical skills that match job descriptions.</li>
+            <li data-lang-key="criteria-impact"><strong>Impact & Achievements:</strong> Measures how well accomplishments are quantified (e.g., “increased sales by 30%” rather than “helped sales”).</li>
         </ul>
     </section>
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
+        <script>
+        // Language translations
+        const translations = {
+            en: {
+                title: 'Revime',
+                subtitle: 'AI Resume reviewer',
+                'jobdesc-title': 'Job Descriptions',
+                'jobdesc-input': 'Enter job description',
+                'add-btn': 'Add',
+                'resume-title': 'Resume',
+                'resume-input': 'Paste your resume here...',
+                'save-resume': 'Save Resume',
+                'rating-title': 'Resume Rating',
+                'rate-resume': 'Rate Resume',
+                'about-title': 'Enhance your resume with AI Resume Checker',
+                'about-desc': 'Revime is a tool designed to evaluate the quality and effectiveness of a resume by analyzing its content, structure, and presentation. The system provides a numerical score between 0 and 100, where 0 indicates a very weak resume and 100 indicates an excellent, highly competitive resume.',
+                'criteria-title': 'The rating is determined based on several criteria:',
+                'criteria-content': '<strong>Content Relevance:</strong> Checks whether the resume highlights relevant experience, skills, and achievements aligned with the target job.',
+                'criteria-clarity': '<strong>Clarity:</strong> Evaluates logical flow and clarity in your resume. Well-structured resumes with clear wording and consistent style score higher.',
+                'criteria-language': '<strong>Language & Professionalism:</strong> Analyzes grammar, tone, and use of professional language. Avoiding vague phrases and filler words increases the score.',
+                'criteria-skills': '<strong>Skills & Keywords:</strong> Looks for industry-specific keywords and technical skills that match job descriptions.',
+                'criteria-impact': '<strong>Impact & Achievements:</strong> Measures how well accomplishments are quantified (e.g., “increased sales by 30%” rather than “helped sales”).',
+            },
+            th: {
+                title: 'เรวิเม่',
+                subtitle: 'ผู้ช่วยตรวจสอบเรซูเม่ด้วย AI',
+                'jobdesc-title': 'รายละเอียดงาน',
+                'jobdesc-input': 'กรอกรายละเอียดงาน',
+                'add-btn': 'เพิ่ม',
+                'resume-title': 'เรซูเม่',
+                'resume-input': 'วางเรซูเม่ของคุณที่นี่...',
+                'save-resume': 'บันทึกเรซูเม่',
+                'rating-title': 'การประเมินเรซูเม่',
+                'rate-resume': 'ประเมินเรซูเม่',
+                'about-title': 'ยกระดับเรซูเม่ของคุณด้วย AI Resume Checker',
+                'about-desc': 'เรวิเม่เป็นเครื่องมือที่ออกแบบมาเพื่อประเมินคุณภาพและประสิทธิภาพของเรซูเม่ โดยวิเคราะห์เนื้อหา โครงสร้าง และการนำเสนอ ระบบจะให้คะแนนระหว่าง 0 ถึง 100 โดย 0 หมายถึงเรซูเม่ที่ไม่ดี และ 100 หมายถึงเรซูเม่ที่ยอดเยี่ยม',
+                'criteria-title': 'การประเมินคะแนนขึ้นอยู่กับเกณฑ์ต่อไปนี้:',
+                'criteria-content': '<strong>ความเกี่ยวข้องของเนื้อหา:</strong> ตรวจสอบว่าเรซูเม่เน้นประสบการณ์ ทักษะ และความสำเร็จที่เกี่ยวข้องกับงานเป้าหมายหรือไม่',
+                'criteria-clarity': '<strong>ความชัดเจน:</strong> ประเมินความลื่นไหลและความชัดเจนของเรซูเม่ โครงสร้างที่ดีและถ้อยคำที่ชัดเจนจะได้คะแนนสูงกว่า',
+                'criteria-language': '<strong>ภาษาและความเป็นมืออาชีพ:</strong> วิเคราะห์ไวยากรณ์ น้ำเสียง และการใช้ภาษามืออาชีพ หลีกเลี่ยงถ้อยคำกำกวมและคำฟุ่มเฟือยจะได้คะแนนเพิ่ม',
+                'criteria-skills': '<strong>ทักษะและคีย์เวิร์ด:</strong> มองหาคีย์เวิร์ดเฉพาะทางและทักษะที่ตรงกับรายละเอียดงาน',
+                'criteria-impact': '<strong>ผลลัพธ์และความสำเร็จ:</strong> วัดว่าความสำเร็จถูกระบุเป็นตัวเลขหรือไม่ (เช่น “เพิ่มยอดขาย 30%” แทน “ช่วยงานขาย”)',
+            }
+        };
+
+        let currentLang = 'en';
+        const langToggle = document.getElementById('lang-toggle');
+        function updateLangTexts(lang) {
+            document.querySelectorAll('[data-lang-key]').forEach(el => {
+                const key = el.getAttribute('data-lang-key');
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.placeholder = translations[lang][key] || el.placeholder;
+                } else if (el.tagName === 'LI' || el.tagName === 'P' || el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'H3' || el.tagName === 'BUTTON') {
+                    // Some elements may contain HTML (like <strong> in criteria)
+                    el.innerHTML = translations[lang][key] || el.innerHTML;
+                }
+            });
+        }
+        langToggle.onclick = function() {
+            currentLang = currentLang === 'en' ? 'th' : 'en';
+            langToggle.textContent = currentLang === 'en' ? '🇬🇧' : '🇹🇭';
+            updateLangTexts(currentLang);
+        };
+        // Initial language
+        updateLangTexts(currentLang);
+        </script>
 </body>
     <!-- Light/Dark Mode Toggle Button -->
     <button id="theme-toggle" style="position:fixed;bottom:24px;right:24px;z-index:1000;min-width:44px;min-height:44px;box-shadow:0 2px 8px rgba(0,0,0,0.12);">🌙</button>
