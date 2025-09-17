@@ -51,4 +51,33 @@
 
     <script src="script.js"></script>
 </body>
+    <!-- Light/Dark Mode Toggle Button -->
+    <button id="theme-toggle" style="position:fixed;bottom:24px;right:24px;z-index:1000;min-width:44px;min-height:44px;box-shadow:0 2px 8px rgba(0,0,0,0.12);">🌙</button>
+    <script>
+    // Light/Dark mode toggle logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme');
+    function setTheme(mode) {
+        if (mode === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeToggle.textContent = '☀️';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.classList.remove('dark-mode');
+            themeToggle.textContent = '🌙';
+            localStorage.setItem('theme', 'light');
+        }
+    }
+    // Initial theme
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else if (prefersDark) {
+        setTheme('dark');
+    }
+    themeToggle.onclick = () => {
+        const isDark = document.body.classList.contains('dark-mode');
+        setTheme(isDark ? 'light' : 'dark');
+    };
+    </script>
 </html>
