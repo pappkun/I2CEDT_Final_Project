@@ -275,7 +275,7 @@ body.dark-mode #rating-score-label {
     text-shadow: 0 1px 0px rgba(0,0,0,0.7);
 }
 body.dark-mode #rating-result {
-    background: linear-gradient(270deg, #e0e0e0, #7a90b2, #4aa6a6, #e0e0e0);
+    background: #ffffff;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
