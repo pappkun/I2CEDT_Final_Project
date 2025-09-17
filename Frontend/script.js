@@ -87,7 +87,7 @@ function renderRating(data) {
     // Score bar (0-100)
     const score = typeof data.overallscore === 'number' ? data.overallscore : 0;
     // Convert score out of 10 to percent
-    const scorePercent = Math.max(0, Math.min(100, score * 10));
+    const scorePercent = score;
     const bar = `
         <div id="rating-bar">
             <div id="rating-bar-fill" style="width:${scorePercent}%"></div>
